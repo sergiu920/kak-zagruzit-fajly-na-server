@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -24,6 +27,17 @@
 
                     <button type="submit" name="upload_image" class="btn btn-primary">Загрузить изображение</button>
                 </form>
+                <?php
+                    if(isset($_SESSION["server_messages"])){
+                ?>
+                        <div class="server_messages">
+                            <?php echo $_SESSION["server_messages"] ?>
+                        </div>
+                <?php
+                        //Уничтожаем чтобы не появилось заново при обновлении страницы
+                        unset($_SESSION["server_messages"]);
+                    }
+                ?>
             </div>
         </div>
     </div>
