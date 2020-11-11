@@ -12,7 +12,7 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row mb-3">
 
             <div class="col-md-12">
                 <form action="upload-one-file.php?flag" method="POST" enctype="multipart/form-data" class="form-inline md-form">
@@ -40,6 +40,44 @@
                 ?>
             </div>
         </div>
+
+        <?php
+
+            // Получаем список изображений из папки images
+            // отсортированные по имени, в альфабетном порядке
+            $uploaded_files = scandir('images');
+
+            // избавляемся от точек в результате
+            $uploaded_files = array_diff($uploaded_files, ['.', '..']);
+
+            if(count($uploaded_files) > 0){
+                // Если в папке находяться какие-то изображения, то выводим их на страницу
+        ?>
+                <h2 class="mb-3">Загруженные изображения</h2>
+
+                <div class="row mb-3">
+        <?php
+                $i = 1;
+                foreach($uploaded_files as $file){
+        ?>
+                    <div class="col-md-4 text-center">
+                        <img src="images/<?=$file?>" alt="Image" width="300" class="img-responsive" />
+                    </div>
+        <?php
+                    if($i % 3 === 0){
+        ?>
+                </div>
+                <div class="row mb-3">
+        <?php
+                    }
+                    $i++;
+                }
+        ?>
+                </div>
+        <?php
+            }
+        ?>
+
     </div>
 
     <!-- Bootstrap CDN -->

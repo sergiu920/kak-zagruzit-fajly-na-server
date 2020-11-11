@@ -51,7 +51,7 @@ if(!in_array($_FILES['file_img']['type'], $allow_types)){
 // Массив с разрешенными расшерениями
 $allow_extensions = ['jpg', 'jpeg', 'png'];
 
-// Узнаем расирение загруженного файла
+// Узнаем расширение загруженного файла
 $extension_file =  pathinfo( $_FILES['file_img']['name'], PATHINFO_EXTENSION );
 
 if(!in_array($extension_file, $allow_extensions)){
@@ -75,8 +75,11 @@ if($_FILES['file_img']['size'] > return_bytes('3M')){
     exit();
 }
 
+// Узнаем название загруженного файла
+$file_name =  pathinfo( $_FILES['file_img']['name'], PATHINFO_FILENAME );
+
 // Перемещаем изображение в нужную папку
-$result_move = move_uploaded_file($_FILES['file_img']['tmp_name'], 'images/'.$_FILES['file_img']['name']);
+$result_move = move_uploaded_file($_FILES['file_img']['tmp_name'], 'images/'.$file_name.'_'.time().'.'.$extension_file);
 
 if(!$result_move){
 
