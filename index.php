@@ -15,10 +15,10 @@
         <div class="row">
 
             <div class="col-md-12">
-                <form action="upload-one-file.php" method="POST" enctype="multipart/form-data" class="form-inline md-form">
+                <form action="upload-one-file.php?flag" method="POST" enctype="multipart/form-data" class="form-inline md-form">
 
                     <p class="text-info">Разрешается к загрузки только изображения в формате jpg или png</p>
-                    <p class="text-info">Максимальный размер загружаемого файла, не должно превысить 10MB</p>
+                    <p class="text-info">Максимальный размер загружаемого файла, не должно превысить 3MB</p>
                     <div class="input-group">
                         <div class="custom-file">
                             <input type="file" name="file_img" id="file_img" required>
