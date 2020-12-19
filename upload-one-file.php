@@ -86,7 +86,7 @@ if(!$result_move){
     // В случае возникновения какой-то ошибки при загрузке файла
 
     // Сохраняем в сессию сообщение об ошибке.
-    $_SESSION["server_messages"] = "<p class='text-danger font-weight-bold'>Ошибка! Не удалось загрузить файл</p>";
+    $_SESSION["server_messages"] = "<p class='text-danger font-weight-bold'> Ошибка! Не удалось загрузить файл </p>";
 
     //Возвращаем пользователя обратно на страницу загрузки изображения
     header("Location: ".$address_site);
@@ -98,7 +98,7 @@ if(!$result_move){
 // Если загрузка файла было выполнено успешно, выводим пользователю соответствующее сообщение
 
 // Сохраняем в сессию сообщение об ошибке.
-$_SESSION["server_messages"] = "<p class='text-success font-weight-bold'>Файл загружен успешно!!!</p>";
+$_SESSION["server_messages"] = "<p class='text-success font-weight-bold'> Файл загружен успешно! </p>";
 
 //Возвращаем пользователя обратно на страницу загрузки изображения
 header("Location: ".$address_site);
