@@ -1,7 +1,4 @@
 <?php
-
-//echo 'upload_max_filesize in bytes = ' . return_bytes(ini_get('upload_max_filesize'));
-//echo '<br />post_max_size in bytes = ' . return_bytes(ini_get('post_max_size'));
 session_start();
 
 $protocol = isset($_SERVER['HTTPS']) ? 'https://' : 'http://';
